@@ -1,0 +1,1 @@
+This implementation of ML-ME [Hong, Batal, and Hauskrecht 2015] requires the instance-weighted liblinear (http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/#weights_for_data_instances) 1.94 or above. Please place a copy of the library in this directory.

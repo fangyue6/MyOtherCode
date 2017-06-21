@@ -1,0 +1,1 @@
+This implementation of ML-ME [Hong, Batal, and Hauskrecht 2015] requires minFunc (https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html). Please place a copy of the library in this directory.
