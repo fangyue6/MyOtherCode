@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A Gentle Introduction</title>
+    <script src="vue.js"></script>
+    <script
+      src="https://rawgit.com/flatiron/director/master/build/director.min.js">
+    </script>
+     <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+
+  </head>
+
+  <body>
+<!--     <ul>
+      <li><a href="#/author">#/author</a></li>
+      <li><a href="#/books">#/books</a></li>
+      <li><a href="#/books/view/1">#/books/view/1</a></li>
+    </ul> -->
+    <div id="a">
+    </div>
+  </body>
+
+    <script>
+      //var appData = $.get('data.json');
+
+
+      var author = function () { console.log("author"); };
+      var books = function () { console.log("books"); };
+      var viewBook = function (bookId) {
+        //console.log("viewBook: bookId is populated: " + bookId);
+        //var title = appData[bookId].title;
+        $.getJSON("data.json", function(json){
+          alert("JSON Data: " + json[bookId].title);
+        });
+        //$("#a").html("<h1>"+title+"</h1>");
+      };
+
+      var routes = {
+        '/author': author,
+        '/books': [books, function() {
+          console.log("An inline route handler.");
+        }],
+        '/news/view/:bookId': viewBook
+      };
+
+      var router = Router(routes);
+
+      router.init();
+    </script>
+</html>
